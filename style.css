@@ -2,6 +2,9 @@
 
 *{
     box-sizing: border-box;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
 }
 body{
     font-family: 'League Gothic', sans-serif;
@@ -10,14 +13,67 @@ body{
     background-image: url(https://images.unsplash.com/photo-1483921020237-2ff51e8e4b22?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
     background-image: cover;
     background-position: center center;
-    display: flex;
     align-items: center;
     justify-content: center;
+    display: flex;
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
     height: 100%;
     background-size: cover;
+}
+nav{
+    display: flex;
+    position: fixed;
+    background: #1b9bff;
+    top: 0;
+    left: 0;
+    right: 0;
+    justify-content: space-between;
+    z-index: 200;
+    
+}
+label.logo{
+    color: white;
+    margin-top: 1rem;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
+}
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+.hamburger{
+    display: none;
+    cursor: pointer;
+
+}
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+}
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+nav ul li a{
+    color: white;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+a.active,a:hover{
+    background: #1b9bff;
+    transition: .5s;
 }
 .timer-container{
     display: flex;
@@ -35,9 +91,11 @@ h1{
 }
 .countdown-el{
     text-align: center;
+
 }
 .countdown-el span{
     font-size: 1.5rem;
+    font-weight: bold;
 }
 @media (max-width: 600px) {
     .countdown-el span{
@@ -48,6 +106,30 @@ h1{
         font-size: 3rem;
         line-height: 1;
         margin: 0 1.5rem;
+    }
+    .hamburger{
+        display: block;
+    }
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    nav{
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: #1b9bff;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+
     }
   }
 

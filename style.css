@@ -165,8 +165,13 @@ h1{
     }
         nav.disabled{
         display: none;
+    }nav ul li{
+        display: inline-block;
+        line-height: 60px;
+        margin: 0 -20px;
     }
     
-  }
+    
+}
 
 

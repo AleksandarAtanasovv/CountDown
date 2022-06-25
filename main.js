@@ -7,8 +7,8 @@ const newYears = '1 Jan 2023';
 //Hamburger Menu Logic
 
 const hamBurger = document.querySelector('.hamburger-menu');
-const navBar = document.querySelector('nav')
-const nav = document.querySelectorAll('.navbar')
+const navBar = document.querySelector('nav');
+const navLinks = document.querySelectorAll('.nav-link');
 
 hamBurger.addEventListener('click', () =>{
     hamBurger.classList.toggle('active');
@@ -16,8 +16,11 @@ hamBurger.addEventListener('click', () =>{
     
 })
 
-nav.addEventListener('click', () =>{
-    navBar.classList.remove('disabled');
+navLinks.forEach((navs) =>{
+    navs.addEventListener('click', () => {
+        
+        navBar.classList.toggle('disabled')
+    })
 })
 
 

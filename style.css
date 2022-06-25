@@ -50,6 +50,14 @@ nav ul{
     display: none;
     
 }
+.hamburger2{
+    display: none;
+    
+}
+.hamburger3{
+    display: none;
+    
+}
 .bar{
     display: block;
     width: 15px;
@@ -97,7 +105,7 @@ h1{
     font-size: 1.5rem;
     font-weight: bold;
 }
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     .countdown-el span{
         font-size: 2rem;
     }

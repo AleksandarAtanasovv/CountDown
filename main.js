@@ -2,7 +2,24 @@ const getDays = document.getElementById('days');
 const getHours = document.getElementById('hours');
 const getMins = document.getElementById('mins');
 const getSecs = document.getElementById('secs');
-const newYears = '1 Jan 2023'
+const newYears = '1 Jan 2023';
+
+//Hamburger Menu Logic
+
+const hamBurger = document.querySelector('.hamburger-menu');
+const navBar = document.querySelector('nav')
+const nav = document.querySelectorAll('.navbar')
+
+hamBurger.addEventListener('click', () =>{
+    hamBurger.classList.toggle('active');
+    navBar.classList.toggle('disabled');
+    
+})
+
+nav.addEventListener('click', () =>{
+    navBar.classList.remove('disabled');
+})
+
 
 
 function getTime(){

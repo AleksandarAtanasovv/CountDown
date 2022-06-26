@@ -41,6 +41,7 @@ function getTime(){
 
     const seconds = Math.floor(totalSeconds) % 60;
 
+
     getDays.innerText = days
     getHours.innerText = hours
     getMins.innerText = minutes

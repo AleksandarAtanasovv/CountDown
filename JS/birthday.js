@@ -20,11 +20,12 @@ navLinks.forEach((navs) => {
   });
 });
 function getDaysFunc() {
-  const newYears = document.getElementById('date').value;
-  const christMasDate = new Date(newYears);
+  const newEvent = document.getElementById('date').value;
+  const eventDate = new Date(newEvent);
   const currentDate = new Date();
+  const birthdayText = document.getElementById('birthday');
 
-  const totalSeconds = (christMasDate - currentDate) / 1000;
+  const totalSeconds = (eventDate - currentDate) / 1000;
   const days = Math.floor(totalSeconds / 3600 / 24);
   const hours = Math.floor(totalSeconds / 3600) % 24;
   const minutes = Math.floor(totalSeconds / 60) % 60;
@@ -39,16 +40,29 @@ function getDaysFunc() {
   } else {
     getSecs.innerText = `0${seconds}`;
   }
+  
   if(days < 0 || hours < 0 || minutes < 0 || seconds < 0){
     getDays.innerText = "0";
     getHours.innerText = "0";
     getMins.innerText = "0";
     getSecs.innerHTML = "0";
-  }else if(isNaN(days)|| hours === NaN || minutes === NaN || seconds === NaN){
+  }
+  if(isNaN(days)|| hours === NaN || minutes === NaN || seconds === NaN){
     getDays.innerText = "0";
     getHours.innerText = "0";
     getMins.innerText = "0";
     getSecs.innerHTML = "0";
+  }if(days === -1){
+    
+    birthdayText.innerText = "HAPPY BIRTHDAY!!!"
+  }else if(days < -1){
+    birthdayText.innerText ="Birthday went by"
+    Math.abs(getDays).innerText = "0";
+    Math.abs(getHours).innerText = "0";
+    Math.abs(getMins).innerText = "0";
+    Math.abs(getSecs).innerHTML = "0";
+  }else{
+    birthdayText.innerText ="Birthday in"
   }
 }
 getDaysFunc();

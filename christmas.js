@@ -3,7 +3,22 @@ const getHours = document.getElementById("hours");
 const getMins = document.getElementById("mins");
 const getSecs = document.getElementById("secs");
 const newYears = "25 Dec 2022";
+//Hamburger Menu Logic
 
+const hamBurger = document.querySelector(".hamburger-menu");
+const navBar = document.querySelector("nav");
+const navLinks = document.querySelectorAll(".nav-link");
+
+hamBurger.addEventListener("click", () => {
+  hamBurger.classList.toggle("active");
+  navBar.classList.toggle("disabled");
+});
+
+navLinks.forEach((navs) => {
+  navs.addEventListener("click", () => {
+    navBar.classList.toggle("disabled");
+  });
+});
 function getDaysFunc() {
   const christMasDate = new Date(newYears);
   const currentDate = new Date();

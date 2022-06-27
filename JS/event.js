@@ -54,15 +54,15 @@ function getDaysFunc() {
     getSecs.innerHTML = "0";
   }if(days === -1){
     
-    birthdayText.innerText = "HAPPY BIRTHDAY!!!"
+    birthdayText.innerText = "THE EVENT IS NOW!!!"
   }else if(days < -1){
-    birthdayText.innerText ="Birthday went by"
+    birthdayText.innerText ="The event went by"
     Math.abs(getDays).innerText = "0";
     Math.abs(getHours).innerText = "0";
     Math.abs(getMins).innerText = "0";
     Math.abs(getSecs).innerHTML = "0";
   }else{
-    birthdayText.innerText ="Birthday in"
+    birthdayText.innerText ="Event in"
   }
 }
 getDaysFunc();
